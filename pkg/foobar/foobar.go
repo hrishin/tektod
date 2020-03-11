@@ -18,7 +18,7 @@ func ListPipelines(kubeConfig *rest.Config, namespace string) {
 	}
 	fmt.Println("tekton client is created")
 
-	pipelineAPI := tektonCient.TektonV1alpha1().Pipelines("")
+	pipelineAPI := tektonCient.TektonV1alpha1().Pipelines(namespace)
 	ps, err := pipelineAPI.List(metav1.ListOptions{})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to llist pipelines %v", err)

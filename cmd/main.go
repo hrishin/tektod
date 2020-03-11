@@ -12,7 +12,6 @@ import (
 
 func main() {
 	fmt.Println("🐈 tektod")
-
 	kubeconfig := loadKubeConfig()
 	foobar.ListPipelines(kubeconfig, "default")
 }
